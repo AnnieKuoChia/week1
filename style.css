@@ -1,5 +1,53 @@
-* {
-    /* border: 1px solid black; */
+/* 建議加上 reset.css 清除瀏覽器預設樣式 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 建議加上 reset.css 清除瀏覽器預設樣式 */
+
+body {
+    font-family: PingFang TC,sans-serif;
+    /* 整個網頁的統一字體可以設定在 body 上，此外字體無論是使用哪一種，
+    建議都要補上 sans-serif（無襯線字體），確保所有裝置都能正確瀏覽。 */
 }
 
 h1{
@@ -10,21 +58,16 @@ h1{
     line-height: 90px;
     color: #000000;
     font-size: 80px;
-    top: 48px;
-    left: 360px;
-    height: 180px;
     padding-bottom: 24px;
     border-bottom: 2px solid black;
 }
 h2 {
-    font-family: PingFang TC;
     font-size: 32px;
     font-weight: 500;
     height: 45px;
     letter-spacing: 0px;
     text-align: left;
     color: #000000;
-    opacity: 1;
     display: inline-block;
     margin-bottom: 8px;
     margin-top: 0px;
@@ -43,7 +86,6 @@ h3 {
 }
 
 p { 
-    font-family: PingFang TC;
     line-height: 36px;
     font-size: 24px;
     font-weight: 300;
@@ -54,11 +96,15 @@ ul {
 }
 
 li {
-    font-family: PingFang TC;
     line-height: 36px;
     font-size: 24px;
     font-weight: 300;
     margin-bottom: 32px;
+}
+
+hr {
+    margin-block-start: 0px;
+    margin-block-end: 46px;
 }
 
 .none {
@@ -67,17 +113,15 @@ li {
 
 
 .title {
+    /* 區塊建議不要寫死高度，若需要留白，可以使用 padding。例如：.title, .skill  */
     border-bottom: 2px solid black;
-    height: 53px;
+    /* height: 53px; */
     margin-bottom: 16px;
 }
 
 
 .work_ex .title {
     margin-bottom: 22px;
-}
-.title_white {
-    border-bottom: 2px solid white;
 }
 .title_white .title_ch, .title_white .title_en{
     color: white;
@@ -118,6 +162,10 @@ li {
     margin-bottom: 56px;
     position: relative;
 }
+
+.edu li {
+    /* margin-left: 48px; */
+}
 .education-item{
     margin-bottom: 32px;
   }
@@ -129,7 +177,8 @@ li {
     height: 16px;
     background-color: #96A9C4;
     border-radius: 50%;
-    left: 0px;
+    margin-top: 6px;
+    margin-right: 48px;
 
   }
   .timeLine:after{
@@ -146,7 +195,7 @@ li {
   }
 
 .skill {
-    height: 494px;
+    /* 區塊建議不要寫死高度，若需要留白，可以使用 padding。 */
     margin-bottom: 72px;
     position: relative;
 }
@@ -156,18 +205,26 @@ li {
 	background-color: #96A9C4;
 	z-index: -1;
 	height: 360px;
-	width: 1700px;
-	left: -10px;
+	width: 100%;
     top: 69px;
+    /* .skill::after 可以設定 width: 100%，並拿掉 left 設定，讓寬度自適應父元素，才不會出現 x 軸 */
 }
 .skill .title_white {
-    text-align:center
+    text-align:center;
+    padding-top: 24px;
 }
+
+.skill .title_white hr {
+    width: 90%;
+    margin-block-end: 40px;
+}
+
 .skill ul {
     border-left: 1px solid white;
     width: 216px;
     margin: 0 auto;
     margin-top: 40px;
+    padding-left: 24px;
 }
 .skill li {
     margin-bottom: 16px;
@@ -191,7 +248,6 @@ li {
     padding-left: 24px;
 }
 .work_ex li {
-    font-family: PingFang TC;
     font-size: 24px;
     line-height: 36px;
     font-weight: 500;
@@ -219,4 +275,6 @@ footer {
 
 .footer_inner img {
     margin-bottom: 48px;
+    margin-top: 16px;
+    padding: 12px;
 }
